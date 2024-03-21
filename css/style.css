@@ -303,8 +303,8 @@ Module Rule
 
 #progress-value {
   display: block;
-  height: calc(100% - 0.6rem);
-  width: calc(100% - 0.6rem);
+  height: calc(100% - 0.4rem);
+  width: calc(100% - 0.4rem);
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -355,6 +355,7 @@ Header Section css
       }
     }
   }
+
   & .navbar {
     display: flex;
     align-items: center;
@@ -362,10 +363,14 @@ Header Section css
 
     & ul {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
 
       & .nav-item {
+        display: flex;
+        flex-wrap: wrap;
+
         & .nav-link {
           background-color: var(--nav-link-bg);
           padding: 1rem;
@@ -394,7 +399,6 @@ Header Section css
   .header {
     & .navbar {
       & ul {
-        flex-wrap: wrap;
         & .nav-item {
           & .nav-link {
             width: 240px;
@@ -468,8 +472,13 @@ Manga Gallary Section css
 .manga-gallary {
   margin-top: 1rem;
 
+  & .grid {
+    gap: 3rem;
+  }
+
   & .gallary-item {
     display: inline-block;
+    text-align: center;
     padding-block: 2rem;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
@@ -480,6 +489,9 @@ Manga Gallary Section css
     & img {
       max-width: 100%;
       height: auto;
+    }
+    & img:hover {
+      opacity: 0.7;
     }
     & span {
       font-size: 1.7rem;
@@ -496,6 +508,14 @@ Manga Gallary Section css
 
 @media (width <= 600px) {
   .manga-gallary {
+    & .grid {
+      gap: 0rem;
+    }
+
+    & .grid-two--cols {
+      grid-template-columns: 1fr;
+    }
+
     & .gallary-item {
       padding-block: 1rem;
     }
@@ -711,6 +731,10 @@ and history-of-manga-section
     & .para {
       margin-block: 1.5rem;
     }
+    & a {
+      font-size: 1.6rem;
+      text-decoration: underline;
+    }
     & .location-links {
       display: flex;
       flex-direction: column;
@@ -723,11 +747,6 @@ and history-of-manga-section
 
       & .pink {
         color: var(--nav-link-clr);
-      }
-
-      & a {
-        font-size: 1.6rem;
-        text-decoration: underline;
       }
     }
     & span {
